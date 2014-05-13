@@ -7,7 +7,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.0.1</version>
+  <version>5.0.2</version>
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
   <dependencyManagement>
@@ -15,7 +15,7 @@
       <dependency>
         <groupId>omero</groupId>
         <artifactId>blitz</artifactId>
-        <version>5.0.1-SNAPSHOT</version>
+        <version>5.0.2-ice35-SNAPSHOT</version>
         <exclusions>
           <exclusion>
             <groupId>org.springframework.ldap</groupId>
@@ -28,6 +28,10 @@
           <exclusion>
             <groupId>hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>ome</groupId>
+            <artifactId>bio-formats</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -43,6 +47,12 @@
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-core</artifactId>
         <version>3.5.6-Final</version>
+      </dependency>
+      <!-- Using Bio-Formats official POMs rather than Ivy ones -->
+      <dependency>
+        <groupId>ome</groupId>
+        <artifactId>bio-formats</artifactId>
+        <version>5.0.2-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
