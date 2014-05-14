@@ -51,8 +51,8 @@
       <!-- Using Bio-Formats official POMs rather than Ivy ones -->
       <dependency>
         <groupId>ome</groupId>
-        <artifactId>bio-formats</artifactId>
-        <version>5.0.2-SNAPSHOT</version>
+        <artifactId>bioformats_package</artifactId>
+        <version>5.0.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
