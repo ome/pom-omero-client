@@ -7,7 +7,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.1.3</version>
+  <version>5.1.4</version>
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
   <properties>
@@ -64,7 +64,9 @@
     <profile>
       <id>ice35</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>!ice</name>
+        </property>
       </activation>
       <properties>
         <ice.version>ice35</ice.version>
@@ -72,12 +74,24 @@
     </profile>
     <profile>
       <id>ice34</id>
+      <activation>
+        <property>
+          <name>ice</name>
+          <value>34</value>
+        </property>
+      </activation>
       <properties>
         <ice.version>ice34</ice.version>
       </properties>
     </profile>
     <profile>
       <id>ice33</id>
+      <activation>
+        <property>
+          <name>ice</name>
+          <value>33</value>
+        </property>
+      </activation>
       <properties>
         <ice.version>ice33</ice.version>
       </properties>
