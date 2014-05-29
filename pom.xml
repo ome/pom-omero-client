@@ -7,15 +7,19 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>4.4.1</version>
+  <version>4.4.2</version>
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
+  <properties>
+      <omero.version>4.4.12-${ice.version}-SNAPSHOT</omero.version>
+      <bioformats.version>4.4.11</bioformats.version>
+  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>omero</groupId>
         <artifactId>blitz</artifactId>
-        <version>4.4.10-RC1-SNAPSHOT</version>
+        <version>${omero.version}</version>
         <exclusions>
           <exclusion>
             <groupId>org.springframework.ldap</groupId>
@@ -28,6 +32,10 @@
           <exclusion>
             <groupId>hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>ome</groupId>
+            <artifactId>bio-formats</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -44,8 +52,51 @@
         <artifactId>hibernate-core</artifactId>
         <version>3.5.6-Final</version>
       </dependency>
+      <!-- Using Bio-Formats official POMs rather than Ivy ones -->
+      <dependency>
+        <groupId>loci</groupId>
+        <artifactId>loci_tools</artifactId>
+        <version>${bioformats.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+  <profiles>
+    <profile>
+      <id>ice35</id>
+      <activation>
+        <property>
+          <name>!ice</name>
+        </property>
+      </activation>
+      <properties>
+        <ice.version>ice35</ice.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>ice34</id>
+      <activation>
+        <property>
+          <name>ice</name>
+          <value>34</value>
+        </property>
+      </activation>
+      <properties>
+        <ice.version>ice34</ice.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>ice33</id>
+      <activation>
+        <property>
+          <name>ice</name>
+          <value>33</value>
+        </property>
+      </activation>
+      <properties>
+        <ice.version>ice33</ice.version>
+      </properties>
+    </profile>
+  </profiles>
   <repositories>
     <repository>
       <id>ome.releases</id>
@@ -66,14 +117,6 @@
       <id>ome.manual</id>
       <name>ome.manual</name>
       <url>http://artifacts.openmicroscopy.org/artifactory/ome.manual/</url>
-    </repository>
-    <repository>
-      <id>com.springsource.repository.bundles.release</id>
-      <url>http://repository.springsource.com/maven/bundles/release</url>
-    </repository>
-    <repository>
-      <id>com.springsource.repository.bundles.external</id>
-      <url>http://repository.springsource.com/maven/bundles/external</url>
     </repository>
   </repositories>
 </project>
