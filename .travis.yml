@@ -5,4 +5,4 @@ branches:
     - dev_5_0
     - dev_5_1
 before_install: 'mvn -version'
-install: 'mvn -U -B -e clean deploy -Pfull -DskipTests'
+install: 'mvn -U -B -e clean deploy -DskipTests'
