@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>4.4.3</version>
+  <version>4.4.4</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -192,10 +192,10 @@
                           <propertiesFile>publish.properties</propertiesFile>
                       </artifactory>
                       <publisher>
-                          <contextUrl>https://artifacts.openmicroscopy.org/artifactory</contextUrl>
+                          <contextUrl>http://artifacts.openmicroscopy.org/artifactory/</contextUrl>
                           <username>${env.CI_DEPLOY_USER}</username>
                           <password>${env.CI_DEPLOY_PASS}</password>
-                          <repoKey>ome.release</repoKey>
+                          <repoKey>ome.releases</repoKey>
                           <snapshotRepoKey>ome.snapshots</snapshotRepoKey>
                       </publisher>
                       <buildInfo>
