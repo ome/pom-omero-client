@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.0.5</version>
+  <version>5.0.6</version>
+
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
+  <description>
+      pom-omero-client/pom.xml can be used as a parent
+      POM for any projects which would like to connect
+      to OMERO.
+  </description>
+
+  <organization>
+    <name>Open Microscopy Environment</name>
+    <url>http://openmicroscopy.org/</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <inceptionYear>2008</inceptionYear>
+
+  <scm>
+    <url>https://github.com/ome/pom-omero-client</url>
+    <connection>scm:git:git://github.com/ome/pom-omero-client.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/ome/pom-omero-client.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>openmicroscopy.org</id>
+      <name>The OME Team</name>
+      <email>ome-devel@lists.openmicroscopy.org.uk</email>
+      <url>http://openmicroscopy.org/</url>
+      <organization>Open Microscopy Environment</organization>
+      <organizationUrl>http://openmicroscopy.org/</organizationUrl>
+    </developer>
+  </developers>
+
   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
       <omero.version>5.0.2-${ice.version}-b26</omero.version>
       <bioformats.version>5.0.2</bioformats.version>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -119,4 +159,71 @@
       <url>http://artifacts.openmicroscopy.org/artifactory/ome.manual/</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+      <pluginRepository>
+          <id>evgenyg.artifactoryonline.com</id>
+          <url>http://evgenyg.artifactoryonline.com/evgenyg/repo</url>
+          <snapshots><enabled>true</enabled></snapshots>
+          <releases><enabled>true</enabled></releases>
+      </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>org.jfrog.buildinfo</groupId>
+          <artifactId>artifactory-maven-plugin</artifactId>
+          <version>2.2.1</version>
+          <inherited>false</inherited>
+          <executions>
+              <execution>
+                  <id>build-info</id>
+                  <goals>
+                      <goal>publish</goal>
+                  </goals>
+                  <configuration>
+                      <deployProperties>
+                          <build.info.version>${build.info.version}</build.info.version>
+                      </deployProperties>
+                      <artifactory>
+                          <includeEnvVars>true</includeEnvVars>
+                          <timeoutSec>60</timeoutSec>
+                          <propertiesFile>publish.properties</propertiesFile>
+                      </artifactory>
+                      <publisher>
+                          <contextUrl>https://artifacts.openmicroscopy.org/artifactory</contextUrl>
+                          <username>${env.CI_DEPLOY_USER}</username>
+                          <password>${env.CI_DEPLOY_PASS}</password>
+                          <repoKey>ome.release</repoKey>
+                          <snapshotRepoKey>ome.snapshots</snapshotRepoKey>
+                      </publisher>
+                      <buildInfo>
+                          <buildNumber>${env.TRAVIS_BUILD_NUMBER}</buildNumber>
+                          <buildUrl>${env.BUILD_URL}</buildUrl>
+                      </buildInfo>
+                  </configuration>
+              </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <retryFailedDeploymentCount>10</retryFailedDeploymentCount>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.4.1</version>
+        <configuration>
+          <useReleaseProfile>false</useReleaseProfile>
+          <arguments>-P release,sonatype-oss-release,full,no-osgi</arguments>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <allowTimestampedSnapshots>false</allowTimestampedSnapshots>
+          <tagNameFormat>netty-@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
