@@ -192,7 +192,7 @@
                           <propertiesFile>publish.properties</propertiesFile>
                       </artifactory>
                       <publisher>
-                          <contextUrl>https://artifacts.openmicroscopy.org/artifactory</contextUrl>
+                          <contextUrl>http://artifacts.openmicroscopy.org/artifactory</contextUrl>
                           <username>${env.CI_DEPLOY_USER}</username>
                           <password>${env.CI_DEPLOY_PASS}</password>
                           <repoKey>ome.release</repoKey>
