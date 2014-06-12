@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.1.5</version>
+  <version>5.1.6</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -50,7 +50,8 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.1.0-m0.4-${ice.version}-SNAPSHOT</omero.version>
+      <!-- Temporarily the same as the "dev" profile -->
+      <omero.version>5.1.0-m0.3-${ice.version}-SNAPSHOT</omero.version>
       <bioformats.version>5.1.0-SNAPSHOT</bioformats.version>
   </properties>
 
@@ -102,6 +103,13 @@
   </dependencyManagement>
   <profiles>
     <profile>
+      <id>dev</id>
+        <properties>
+          <omero.version>5.1.0-m0.3-${ice.version}-SNAPSHOT</omero.version>
+          <bioformats.version>5.1.0-SNAPSHOT</bioformats.version>
+        </properties>
+    </profile>
+    <profile>
       <id>ice35</id>
       <activation>
         <property>
@@ -139,24 +147,9 @@
   </profiles>
   <repositories>
     <repository>
-      <id>ome.releases</id>
-      <name>ome.releases</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/ome.releases/</url>
-    </repository>
-    <repository>
-      <id>ome.snapshots</id>
-      <name>ome.snapshots</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/ome.snapshots/</url>
-    </repository>
-    <repository>
-      <id>ome.external</id>
-      <name>ome.external</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/ome.external/</url>
-    </repository>
-    <repository>
-      <id>ome.manual</id>
-      <name>ome.manual</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/ome.manual/</url>
+      <id>ome.maven</id>
+      <name>ome.maven</name>
+      <url>http://artifacts.openmicroscopy.org/artifactory/maven/</url>
     </repository>
   </repositories>
 
