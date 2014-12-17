@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.1.6</version>
+  <version>5.1.7</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -50,8 +50,8 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <!-- Temporarily the same as the "dev" profile -->
-      <omero.version>5.1.0-m0.3-${ice.version}-SNAPSHOT</omero.version>
+      <omero.version>5.1.0-m2-${ice.version}-b25</omero.version>
+      <!-- Still using BF SNAPSHOTS for the moment -->
       <bioformats.version>5.1.0-SNAPSHOT</bioformats.version>
   </properties>
 
@@ -105,7 +105,7 @@
     <profile>
       <id>dev</id>
         <properties>
-          <omero.version>5.1.0-m0.3-${ice.version}-SNAPSHOT</omero.version>
+          <omero.version>5.1.0-m3-${ice.version}-SNAPSHOT</omero.version>
           <bioformats.version>5.1.0-SNAPSHOT</bioformats.version>
         </properties>
     </profile>
