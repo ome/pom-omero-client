@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.1.11</version>
+  <version>5.1.12</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -72,10 +72,6 @@
           <exclusion>
             <groupId>hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>ome</groupId>
-            <artifactId>bio-formats</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
