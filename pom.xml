@@ -100,8 +100,8 @@
     <profile>
       <id>dev</id>
         <properties>
-          <omero.version>5.1.4-${ice.version}-SNAPSHOT</omero.version>
-          <bioformats.version>5.1.4-SNAPSHOT</bioformats.version>
+          <omero.version>5.2.0-${ice.version}-SNAPSHOT</omero.version>
+          <bioformats.version>5.1.5-SNAPSHOT</bioformats.version>
         </properties>
     </profile>
     <profile>
