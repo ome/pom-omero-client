@@ -15,6 +15,7 @@ branches:
     - dev_4_4
     - dev_5_0
     - dev_5_1
+    - dev_5_2
 env:
   global:
     - secure: "FhQxNU0O4aylgoJDK6ymEjYc3ILFl4IjjrPx7OdCeG+UMqBc9da/0CM/l6ehWHHxn0VQUc0+7qZgQjguRdMRGVApMIxY2a9vipYnG6DwYKQD59oqoJHfTAqtb+50vdC85pyNiBIetraOdyfJfjVTmAgXRTUwW5GdgSklJFsqjIY="
