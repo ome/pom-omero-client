@@ -115,30 +115,6 @@
         <ice.version>ice35</ice.version>
       </properties>
     </profile>
-    <profile>
-      <id>ice34</id>
-      <activation>
-        <property>
-          <name>ice</name>
-          <value>34</value>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice34</ice.version>
-      </properties>
-    </profile>
-    <profile>
-      <id>ice33</id>
-      <activation>
-        <property>
-          <name>ice</name>
-          <value>33</value>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice33</ice.version>
-      </properties>
-    </profile>
   </profiles>
   <repositories>
     <repository>
