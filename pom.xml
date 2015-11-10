@@ -91,7 +91,12 @@
       <!-- Using Bio-Formats official POMs rather than Ivy ones -->
       <dependency>
         <groupId>ome</groupId>
-        <artifactId>bioformats_package</artifactId>
+        <artifactId>formats-gpl</artifactId>
+        <version>${bioformats.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ome</groupId>
+        <artifactId>formats-bsd</artifactId>
         <version>${bioformats.version}</version>
       </dependency>
     </dependencies>
