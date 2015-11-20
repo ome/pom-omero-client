@@ -157,7 +157,7 @@
                           <contextUrl>http://artifacts.openmicroscopy.org/artifactory/</contextUrl>
                           <username>${env.CI_DEPLOY_USER}</username>
                           <password>${env.CI_DEPLOY_PASS}</password>
-                          <repoKey>ome.releases</repoKey>
+                          <repoKey>ome.staging</repoKey>
                           <snapshotRepoKey>ome.snapshots</snapshotRepoKey>
                       </publisher>
                       <buildInfo>
