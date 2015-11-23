@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.2.1-SNAPSHOT</version>
+  <version>5.2.1</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -50,8 +50,8 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.2.1-${ice.version}-SNAPSHOT</omero.version>
-      <bioformats.version>5.1.6-SNAPSHOT</bioformats.version>
+      <omero.version>5.2.0-${ice.version}</omero.version>
+      <bioformats.version>5.1.6</bioformats.version>
   </properties>
 
   <dependencyManagement>
@@ -91,7 +91,12 @@
       <!-- Using Bio-Formats official POMs rather than Ivy ones -->
       <dependency>
         <groupId>ome</groupId>
-        <artifactId>bioformats_package</artifactId>
+        <artifactId>formats-gpl</artifactId>
+        <version>${bioformats.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ome</groupId>
+        <artifactId>formats-bsd</artifactId>
         <version>${bioformats.version}</version>
       </dependency>
     </dependencies>
@@ -152,7 +157,7 @@
                           <contextUrl>http://artifacts.openmicroscopy.org/artifactory/</contextUrl>
                           <username>${env.CI_DEPLOY_USER}</username>
                           <password>${env.CI_DEPLOY_PASS}</password>
-                          <repoKey>ome.releases</repoKey>
+                          <repoKey>ome.staging</repoKey>
                           <snapshotRepoKey>ome.snapshots</snapshotRepoKey>
                       </publisher>
                       <buildInfo>
