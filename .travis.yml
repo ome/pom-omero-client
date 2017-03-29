@@ -16,5 +16,6 @@ branches:
     - dev_5_0
     - dev_5_1
     - dev_5_2
+    - dev_5_3
 
 after_success: if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]]; then mvn -U -B -e clean deploy -DskipTests; fi
