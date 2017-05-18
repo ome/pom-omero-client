@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.3.3</version>
+  <version>5.3.4</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -136,6 +136,12 @@
       <id>unidata-releases</id>
       <name>unidata-releases</name>
       <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+    </repository>
+    <!-- ZeroC Nexus Repository is required for Ice 3.5 artifacts-->
+    <repository>
+      <id>zeroc</id>
+      <name>ZeroC Nexus Repository</name>
+      <url>http://repo.zeroc.com/nexus/content/repositories/releases</url>
     </repository>
   </repositories>
 
