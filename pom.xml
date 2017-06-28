@@ -137,6 +137,12 @@
       <name>unidata-releases</name>
       <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
     </repository>
+    <!-- ZeroC Nexus Repository is required for Ice 3.5 artifacts-->
+    <repository>
+      <id>zeroc</id>
+      <name>ZeroC Nexus Repository</name>
+      <url>http://repo.zeroc.com/nexus/content/repositories/releases</url>
+    </repository>
   </repositories>
 
   <pluginRepositories>
