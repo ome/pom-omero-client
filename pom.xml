@@ -50,8 +50,8 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.3.3-${ice.version}-b63</omero.version>
-      <bioformats.version>5.5.2</bioformats.version>
+      <omero.version>5.3.4-${ice.version}-b69</omero.version>
+      <bioformats.version>5.5.3</bioformats.version>
   </properties>
 
   <dependencyManagement>
@@ -136,6 +136,12 @@
       <id>unidata-releases</id>
       <name>unidata-releases</name>
       <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+    </repository>
+    <!-- ZeroC Nexus Repository is required for Ice 3.5 artifacts-->
+    <repository>
+      <id>zeroc</id>
+      <name>ZeroC Nexus Repository</name>
+      <url>http://repo.zeroc.com/nexus/content/repositories/releases</url>
     </repository>
   </repositories>
 
