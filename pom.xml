@@ -51,7 +51,7 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
       <omero.version>5.4.2-${ice.version}-b76</omero.version>
-      <bioformats.version>5.7.2</bioformats.version>
+      <bioformats.version>5.7.3</bioformats.version>
   </properties>
 
   <dependencyManagement>
