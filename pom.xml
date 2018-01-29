@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.4.2</version>
+  <version>5.4.3</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -50,7 +50,7 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.4.2-${ice.version}-b76</omero.version>
+      <omero.version>5.4.3-${ice.version}-b77</omero.version>
       <bioformats.version>5.7.3</bioformats.version>
   </properties>
 
