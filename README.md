@@ -1,4 +1,4 @@
 pom-omero-client
 ================
 
-Parent POM for OMERO clients
+Parent POM for OMERO clients.
