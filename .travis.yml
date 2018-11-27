@@ -12,12 +12,6 @@ cache:
 
 branches:
   only:
-    - dev_4_4
-    - dev_5_0
-    - dev_5_1
-    - dev_5_2
-    - dev_5_3
-    - dev_5_4
     - master
 
 after_success: if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]]; then mvn -U -B -e clean deploy -DskipTests; fi
