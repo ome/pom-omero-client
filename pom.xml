@@ -50,7 +50,7 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.5.0-m2-${ice.version}-b102</omero.version>
+      <omero.version>5.5.0-m1-${ice.version}-b102</omero.version>
       <bioformats.version>5.9.2</bioformats.version>
   </properties>
 
@@ -106,8 +106,7 @@
       <id>ice36</id>
       <activation>
         <property>
-          <name>ice</name>
-          <value>36</value>
+          <name>!ice</name>
         </property>
       </activation>
       <properties>
