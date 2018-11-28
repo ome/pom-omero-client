@@ -6,7 +6,7 @@
   <groupId>ome</groupId>
   <artifactId>pom-omero-client</artifactId>
   <packaging>pom</packaging>
-  <version>5.4.9</version>
+  <version>5.5.0-SNAPSHOT</version>
 
   <name>pom-omero-client</name>
   <url>http://github.com/ome/pom-omero-client</url>
@@ -41,16 +41,16 @@
       <id>openmicroscopy.org</id>
       <name>The OME Team</name>
       <email>ome-devel@lists.openmicroscopy.org.uk</email>
-      <url>http://openmicroscopy.org/</url>
+      <url>https://openmicroscopy.org/</url>
       <organization>Open Microscopy Environment</organization>
-      <organizationUrl>http://openmicroscopy.org/</organizationUrl>
+      <organizationUrl>https://openmicroscopy.org/</organizationUrl>
     </developer>
   </developers>
 
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <omero.version>5.4.9-${ice.version}-b101</omero.version>
+      <omero.version>5.5.0-m1-${ice.version}-b102</omero.version>
       <bioformats.version>5.9.2</bioformats.version>
   </properties>
 
@@ -103,22 +103,10 @@
   </dependencyManagement>
   <profiles>
     <profile>
-      <id>ice35</id>
-      <activation>
-        <property>
-          <name>!ice</name>
-        </property>
-      </activation>
-      <properties>
-        <ice.version>ice35</ice.version>
-      </properties>
-    </profile>
-    <profile>
       <id>ice36</id>
       <activation>
         <property>
-          <name>ice</name>
-          <value>36</value>
+          <name>!ice</name>
         </property>
       </activation>
       <properties>
@@ -130,7 +118,7 @@
     <repository>
       <id>ome.maven</id>
       <name>ome.maven</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/maven/</url>
+      <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
     </repository>
     <repository>
       <id>unidata-releases</id>
@@ -141,7 +129,7 @@
     <repository>
       <id>zeroc</id>
       <name>ZeroC Nexus Repository</name>
-      <url>http://repo.zeroc.com/nexus/content/repositories/releases</url>
+      <url>https://repo.zeroc.com/nexus/content/repositories/releases</url>
     </repository>
   </repositories>
 
