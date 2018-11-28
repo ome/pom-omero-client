@@ -41,9 +41,9 @@
       <id>openmicroscopy.org</id>
       <name>The OME Team</name>
       <email>ome-devel@lists.openmicroscopy.org.uk</email>
-      <url>http://openmicroscopy.org/</url>
+      <url>https://openmicroscopy.org/</url>
       <organization>Open Microscopy Environment</organization>
-      <organizationUrl>http://openmicroscopy.org/</organizationUrl>
+      <organizationUrl>https://openmicroscopy.org/</organizationUrl>
     </developer>
   </developers>
 
@@ -118,7 +118,7 @@
     <repository>
       <id>ome.maven</id>
       <name>ome.maven</name>
-      <url>http://artifacts.openmicroscopy.org/artifactory/maven/</url>
+      <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
     </repository>
     <repository>
       <id>unidata-releases</id>
@@ -129,7 +129,7 @@
     <repository>
       <id>zeroc</id>
       <name>ZeroC Nexus Repository</name>
-      <url>http://repo.zeroc.com/nexus/content/repositories/releases</url>
+      <url>https://repo.zeroc.com/nexus/content/repositories/releases</url>
     </repository>
   </repositories>
 
