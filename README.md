@@ -11,5 +11,5 @@ are two options:
     https://github.com/ome/minimal-omero-client/ for an example.
 
 -   if you want to use a parent POM and/or write a client compatible with
-    the Scijava ecosystem e.g. ImageJ, you can inherit the
+    the SciJava ecosystem e.g. ImageJ, you can inherit the
     [SciJava parent POM](https://github.com/scijava/pom-scijava)
