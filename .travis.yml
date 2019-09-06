@@ -1,3 +1,4 @@
+---
 language: java
 
 # This (sudo: false) is needed to "run on container-based infrastructure" on
@@ -14,4 +15,3 @@ branches:
   only:
     - master
 
-after_success: if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]]; then mvn -U -B -e clean deploy -DskipTests; fi
